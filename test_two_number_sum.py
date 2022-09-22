@@ -1,7 +1,7 @@
 from main import two_number_sum
 import unittest
 import pytest
-
+# 9. Coding Question
 
 def test_correct_sum1():
     int_list = [4, 6, 7, 2, 19]
@@ -28,6 +28,3 @@ def test_corect_duplicate():
     assert two_number_sum(int_list, target_sum) == expected
 
 
-
-
-3=

@@ -1,0 +1,116 @@
+1. Theory Questions
+
+1. A thread is a set of instructions (code) in a process.
+Multi-threading is where multiple sets of instructions are run at once.
+
+2. They both run multiple threads but in different ways.
+Concurrency is where multiple threads are managed at the same time through interleaving process.
+Parallellism is where multiple threads are ran and managed simultaneously through multiple processors.
+
+3. A Garbage collector removes objects from memory and frees up space.
+It works by reference count.
+When an object and/or a reference to that object is made, its reference count increases by one.
+When reference to an object is deleted (with del), then the reference count decreases by one.
+When the reference count reaches zero, the Garbage collector removes the object from memory.
+
+4. Transaction Management is where SQL Statements are made on a relational database
+with the option to reverse the effects of the statements.
+For example, when dealing with a bank transfer, you may use a Transaction Management on the banking database
+such that the following changes will be made to the database:
+step 1. take money away from bank account balance of transferror
+step 2. add money to bank account balance of transferree
+if, for example, step 2 fails and the transferree does not receive the money,
+but step 1 means that the money has left the transferror's account,
+Transaction Management allows you the ability to ROLLBACK (reverse) the effects of the transaction such that
+the bank account balance of the transferror is restored to as it was before the bank transfer.
+
+5. An endpoint is where the API interacts with the data source.
+The most common method to interact with the API data source is to fetch data from it with a get method.
+
+6. Data normalization is where the database is structured in the most effective and efficient way.
+You may use foreign keys to separate out data into different tables, so that not all the info is in one table.
+For example, you may separate hospital patients' data as follows:
+TABLE 1 DOCTOR-PATIENT: patient id, doctor id
+TABLE 2 PATIENT-INFO: patient id, patient name, dob, gender
+TABLE 3 PATIENT-DIAGNOSIS: patient id, diagnosis
+This is so that when you look at which doctor is tending to the patient, you won't have to see the patient's details, diagnosis, etc.
+It also allows so that when a patient has for example, multiple diagnosises, other information does not need to be repeated,
+as would be the case if it were all one table.
+It also adds an extra layer of protection when dealing with sensitive data.
+
+
+
+2. Concept Question
+Exception handling is where you account for exceptions.
+This is so that the program does not exit unexpectedly due to an exception, and instead is dealt with within the program.
+You can choose to raise your own error message in the program, or do perform a different operation on the 'unexpected' input.
+In Python, you can do this by:
+try:
+    <operation>
+except:
+    <operation if there is an exception error in try:>
+else:
+    <operation if there is no exception error in try:>
+finally:
+    <operation that occurs whether or not there was an error>
+
+Debugging is where you go through your code and work through exception errors.
+Python has an in-built Debugger where you can see the evaluation of the expressions in your code.
+This is so that you can easily identify where the evaluation/output of a code is not as you expect and thus is causing the error,
+so that you can amend this.
+When your program has an error, Python gives you clear, high-level error messages for easier debugging.
+
+
+
+
+3. Coding Question
+See main.py
+
+
+
+4. Coding Question
+See test_square_list.py
+
+
+
+5. Concept Question
+The Development team in the Scrum Agile team is responsible for coding and implementing the program.
+They participate in the daily Sprint meetings to discuss their progress, their plans, and any obstacles.
+
+The Product Owner is someone who represents the interests of stakeholders and end-users.
+They lead the team in terms of product requirements, what areas to prioritise,
+and evaluates the effectiveness of the program.
+They continually communicate with the Scrum Agile team as things change.
+
+
+
+6. Concept Question with Practical Example
+Test Driven Development allows you to see if your program is performing correctly, and
+allows you to see and account for your program's performance in given different situations,
+including edge cases.
+It leads to more robust programs that are less prone to errors and failures.
+TDD allows you to track changes in the way that the program functions when modifications are made
+and different functionalities are added - and correct these if need be.
+However, TDD adds to the amount of time it would take to code the program and existing tests add an extra obstacle
+when big changes are made (and you do want the output to change).
+TDD will be more useful where failures in the program will have very drastic consequences
+and the program has a responsibility to be robust.
+For example, it will be more important to use TDD to ensure that the program works as expected
+in a variety of test cases for a program that controls a rocket ship.
+You will need to stringently test that it functions correctly before use, otherwise lives are at risk!
+However, for something like a free-to-play connect-4 mobile app game, it will be less important to use TDD,
+as it is less stakes and you may want to roll out improvements quickly,
+and it may cause more difficulties where, for example, you have just started with programming the game and are unsure
+if you want it to be pvp or single-player.
+
+
+
+
+7. Concept Question
+A Python DB cursor is a link between the database and Python.
+You use the database's language to extract information from a database into Python using a cursor -
+it 'points' to information in the database that can then be assigned to a Python variable and used in the Python program.
+You can also use the database's language to update the database information through Python using a cursor.
+For example, you can create a cursor to SELECT BALANCE from BANK ACCOUNT from the BANK database.
+You can then manipulate the balance amount in Python and then use a cursor to UPDATE BALANCE [...].
+
