@@ -1,0 +1,18 @@
+8. SQL Pratical question
+
+SELECT customer_id, max(purch_amt) AS max_purch_amt
+FROM ORDERS
+GROUP BY customer_id
+HAVING customer_id BETWEEN 3002 AND 3007
+AND max(purch_amt) > 1000;
+
+
+
+
+
+NOTE: SQL file also uploaded to GitHub.
+
+
+
+
+

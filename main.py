@@ -1,6 +1,12 @@
-import unittest
+# 3. Coding Question
+def square_list(int_list):
+    square_list = [int**2 for int in int_list]
+    return sorted(square_list)
 
-# q9
+
+
+
+# 9. Coding Question
 def two_number_sum(int_list, target_sum):
     output = []
     for i in range(len(int_list)):
